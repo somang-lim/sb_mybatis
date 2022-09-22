@@ -16,11 +16,17 @@ public class AppTest {
     private ArticleService articleService;
 
     @Test
-    @DisplayName("게시물 리스트 반환")
+    @DisplayName("게시물들 조회")
     void t1() {
         List<Article> articles = articleService.getArticles();
 
         System.out.println(articles);
+    }
+
+    @Test
+    @DisplayName("게시물 작성")
+    void t2() {
+        articleService.write("제목3", "내용3");
     }
 
 }
