@@ -50,8 +50,22 @@ public interface ArticleRepository {
             SELECT A.*
             FROM article AS A
             WHERE 1
-            <if test = "kw != ''">
-            AND A.subject LIKE CONCAT('%', #{kw}, '%')
+            <if test="kw != ''">
+                <choose>
+                    <when test="kwType == 'subject'">
+                        AND A.subject LIKE CONCAT('%', #{kw}, '%')
+                    </when>
+                    <when test="kwType == 'content'">
+                        AND A.content LIKE CONCAT('%', #{kw}, '%')
+                    </when>
+                    <otherwise>
+                        AND (
+                        A.subject LIKE CONCAT('%', #{kw}, '%')
+                        OR
+                        A.content LIKE CONCAT('%', #{kw}, '%')
+                        )
+                    </otherwise>
+                </choose>
             </if>
             </script>
             """)
