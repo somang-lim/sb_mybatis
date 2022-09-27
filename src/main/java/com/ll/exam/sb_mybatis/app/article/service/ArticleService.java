@@ -1,7 +1,7 @@
-package com.ll.exam.sb_mybatis.article.service;
+package com.ll.exam.sb_mybatis.app.article.service;
 
-import com.ll.exam.sb_mybatis.article.dto.Article;
-import com.ll.exam.sb_mybatis.article.repository.ArticleRepository;
+import com.ll.exam.sb_mybatis.app.article.dto.Article;
+import com.ll.exam.sb_mybatis.app.article.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
