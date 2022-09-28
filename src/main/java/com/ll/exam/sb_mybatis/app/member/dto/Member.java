@@ -1,8 +1,10 @@
 package com.ll.exam.sb_mybatis.app.member.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class Member {
     private long id;
     private String username;
